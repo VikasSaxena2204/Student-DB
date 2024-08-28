@@ -59,7 +59,7 @@ function Student() {
                 <Link to={`/students/${item.id}/edit`} className="btn btn-success">Edit</Link>
             </td>
             <td>
-                <button type='button' className="btn btn-danger" onClick={(e) => deleteStudent(e, item.id)}>Delete</button>
+                <button type='button' className="btn btn-danger" onClick={(e) => deleteStudent(item.id)}>Delete</button>
             </td>
         </tr>
     ));
