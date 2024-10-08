@@ -3,15 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const location = useLocation();
-
-  // Function to check if the current link is active
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          STUDENT DB
+          Crud App
         </Link>
         <button
           className="navbar-toggler"
@@ -32,27 +30,18 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className={`nav-link ${isActive("/about-us")}`}
-                to="/about-us"
-              >
+              <Link className={`nav-link ${isActive("/students")}`} to="/students">
+                Students
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link ${isActive("/about-us")}`} to="/about-us">
                 About Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className={`nav-link ${isActive("/contact-us")}`}
-                to="/contact-us"
-              >
+              <Link className={`nav-link ${isActive("/contact-us")}`} to="/contact-us">
                 Contact Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${isActive("/students")}`}
-                to="/students"
-              >
-                Students
               </Link>
             </li>
           </ul>
