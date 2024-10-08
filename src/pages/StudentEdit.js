@@ -11,7 +11,7 @@ function StudentEdit() {
         name: '',
         email: '',
         phone: '',
-        course: ''
+        city: ''
     });
     const [loading, setLoading] = useState(true);
     const [inputErrorList, setInputErrorList] = useState({});
@@ -39,7 +39,7 @@ function StudentEdit() {
         setLoading(true);
 
         // Basic client-side validation
-        if (!student.name || !student.email || !student.phone || !student.course) {
+        if (!student.name || !student.email || !student.phone || !student.city) {
             setInputErrorList({ general: 'All fields are required' });
             setLoading(false);
             return;
@@ -119,15 +119,15 @@ function StudentEdit() {
                                     <span className="text-danger">{inputErrorList.phone}</span>
                                 </div>
                                 <div className="mb-3">
-                                    <label>Course</label>
+                                    <label>City</label>
                                     <input
                                         type="text"
-                                        name="course"
-                                        value={student.course}
+                                        name="city"
+                                        value={student.city}
                                         onChange={handleInput}
                                         className="form-control"
                                     />
-                                    <span className="text-danger">{inputErrorList.course}</span>
+                                    <span className="text-danger">{inputErrorList.city}</span>
                                 </div>
                                 <div className="mb-3">
                                     <button
